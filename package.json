@@ -4,7 +4,8 @@
   "description": "Node module http",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx tsc && npx ts-node dist/index.js"
   },
   "author": "Carlos Ernesto Diaz Basante",
   "license": "ISC",
