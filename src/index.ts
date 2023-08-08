@@ -1,8 +1,12 @@
 import * as http from "http";
+import * as fs from "fs";
+import * as path from "path";
 
 const hostname = "localhost";
 const port = 3000;
 const server = http.createServer((req, res) => {
+  console.log("Request for", req.url, "by method", req.method);
+
   const { headers } = req;
   let textHeaders = "<ul>";
   for (const [key, value] of Object.entries(headers)) {
@@ -29,5 +33,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, hostname, () =>
-  console.log("running server on app", `http://${hostname}:${port}`)
+  console.log("Server running", `http://${hostname}:${port}`)
 );
