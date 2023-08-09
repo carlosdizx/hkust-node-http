@@ -22,6 +22,10 @@ const server = http.createServer(({ url, method }, res) => {
       }
     }
     fs.createReadStream(filePath).pipe(res);
+  } else {
+    res.statusCode = 403;
+    const html = "<h1>Only accept method GET</h1>";
+    res.end(html);
   }
 });
 
